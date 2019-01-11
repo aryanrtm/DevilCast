@@ -85,13 +85,13 @@ function rename_device(){
 }
 
 function reboot_device(){
-	curl -s -L -XPOST "${iP}:${p0rt}/setup/reboot" --data "params=fdr"
+	curl -s -L -XPOST "${iP}:${p0rt}/setup/reboot" --data "params=now"
 	printf "Turn Off The Device ... \n"
 }
 
 function mass_reboot_device(){
 	printf "${RD}Reboot The Nigga ${NT}~> ${YW}${wha}:${p0rt} \n"
-	curl -s -L -XPOST "${wha}:${p0rt}/setup/set_eureka_info" --data "params=fdr"
+	curl -s -L -XPOST "${wha}:${p0rt}/setup/set_eureka_info" --data "params=now"
 }
 
 function l00p_mass_reboot(){
