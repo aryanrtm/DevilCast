@@ -49,11 +49,11 @@ function info_device(){
 		rm info_device_results.tmp
 		exit
 	else
-		printf "Target IP     : $iP \n"
-		printf "Device Name   : $(cat info_device_results.tmp | grep -Po '(?<=<friendlyName>).*?(?=<)') \n"
-		printf "Manufacturer  : $(cat info_device_results.tmp | grep -Po '(?<=<manufacturer>).*?(?=<)') \n"
-		printf "Model Name    : $(cat info_device_results.tmp | grep -Po '(?<=<modelName>).*?(?=<)') \n"
-		printf "................................................\n"
+		printf "${CY}Target IP     : ${RD}$iP \n"
+		printf "${CY}Device Name   : ${RD}$(cat info_device_results.tmp | grep -Po '(?<=<friendlyName>).*?(?=<)') \n"
+		printf "${CY}Manufacturer  : ${RD}$(cat info_device_results.tmp | grep -Po '(?<=<manufacturer>).*?(?=<)') \n"
+		printf "${CY}Model Name    : ${RD}$(cat info_device_results.tmp | grep -Po '(?<=<modelName>).*?(?=<)') \n"
+		printf "${NT}................................................\n"
 	fi
 }
 
