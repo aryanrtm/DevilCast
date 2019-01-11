@@ -2,4 +2,4 @@
 ChromeCast Exploiter
 
 # Screenshot
-![screenshot_20190111_205406](https://user-images.githubusercontent.com/32659320/51038386-a9160f00-15e5-11e9-84ae-594c25647c1e.png)
+![screenshot_20190111_212616](https://user-images.githubusercontent.com/32659320/51039395-cba92780-15e7-11e9-88b9-8542ff673c4c.png)
