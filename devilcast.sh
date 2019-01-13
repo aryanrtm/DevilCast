@@ -79,19 +79,19 @@ function info_device2(){
 
 function rename_device(){
 	read -p "Enter a New Name: " n4m3;
-	curl -s -L -XPOST "${iP}:${p0rt}/setup/set_eureka_info" --data "name=${n4m3}"
-	printf "Rename The Device ... \n"
+	local cok=$(curl -s -X POST $iP:8008/setup/set_eureka_info --data-binary '{"name":"'$n4m3'"}' -H "Content-Type: application/json")
+	printf "${RD}[*]${GR} Rename The Device ... \n"
 
 }
 
 function reboot_device(){
-	curl -s -L -XPOST "${iP}:${p0rt}/setup/reboot" --data "params=now"
-	printf "Turn Off The Device ... \n"
+	local cok=$(curl -s -X POST $iP:8008/setup/set_eureka_info --data-binary '{"params":"now"}' -H "Content-Type: application/json")
+	printf "${RD}[*]${GR} Turn Off The Device ... \n"
 }
 
 function mass_reboot_device(){
 	printf "${RD}Reboot The Nigga ${NT}~> ${YW}${wha}:${p0rt} \n"
-	curl -s -L -XPOST "${wha}:${p0rt}/setup/set_eureka_info" --data "params=now"
+	local cok=$(curl -s -X POST $wha:8008/setup/set_eureka_info --data-binary '{"params":"now"}' -H "Content-Type: application/json")
 }
 
 function l00p_mass_reboot(){
@@ -115,7 +115,7 @@ function l00p_mass_reboot(){
 
 function mass_rename_device(){
 	printf "${RD}Rename The Nigga ${NT}~> ${YW}${wha}:${p0rt} \n"
-	curl -s -L -XPOST "${wha}:${p0rt}/setup/set_eureka_info" --data "name=${n4m3}"
+	local cok=$(curl -s -X POST $wha:8008/setup/set_eureka_info --data-binary '{"name":"'$n4m3'"}' -H "Content-Type: application/json")
 }
 
 function l00p_mass_rename(){
@@ -153,13 +153,13 @@ function app_device(){
 	read -p "nyan> " whut;
 	if [[ $whut == 1 ]]; then
 		curl -s -L --request DELETE "${iP}:${p0rt}/apps/GoogleMusic"
-		printf "Turn Off Google Play Music ... \n"
+		printf "${RD}[*]${GR} Turn Off Google Play Music ... \n"
 	elif [[ $whut == 2 ]]; then
 		curl -s -L --request DELETE "${iP}:${p0rt}/apps/Youtube"
-		printf "Turn Off Youtube ... \n"
+		printf "${RD}[*]${GR} Turn Off Youtube ... \n"
 	elif [[ $whut == 3 ]]; then
 		curl -s -L --request DELETE "${iP}:${p0rt}/apps/Netflix"
-		printf "Turn Off Netflix ... \n"
+		printf "${RD}[*]${GR} Turn Off Netflix ... \n"
 	else
 		printf " ${RD}[!] ${YW}Error, Try Again.\n"
 		exit
