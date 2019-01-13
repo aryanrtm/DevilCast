@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# DevilCast v1.0
-# Release on 11/01/2019
+# DevilCast v1.1
+# Release on 13/01/2019
 # Github: github.com/aryanrtm/DevilCast
 # © Copyright ~ 4WSec
 
